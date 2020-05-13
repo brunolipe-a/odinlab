@@ -11,9 +11,15 @@ module.exports = {
   ssl: {
     rejectUnauthorized: false,
   },
-  entities: ['src/app/models/**/*.ts'],
-  migrations: ['src/database/migrations/**/*.ts'],
-  subscribers: ['src/database/subscriber/**/*.ts'],
+  entities: ['src/app/models/**/*.ts', 'dist/app/models/**/*.js'],
+  migrations: [
+    'src/database/migrations/**/*.ts',
+    'dist/database/migrations/**/*.js',
+  ],
+  subscribers: [
+    'src/database/subscriber/**/*.ts',
+    'dist/database/subscriber/**/*.js',
+  ],
   cli: {
     entitiesDir: 'src/app/models',
     migrationsDir: 'src/database/migrations',
