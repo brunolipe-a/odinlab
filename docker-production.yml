@@ -3,7 +3,7 @@ services:
   zeus:
     build: ./zeus
     container_name: zeus
-    command: yarn dev
+    command: yarn start
     restart: always
     # volumes:
     #   - ./zeus:/usr/app
@@ -13,7 +13,7 @@ services:
   thor:
     build: ./thor
     container_name: thor
-    command: yarn dev
+    command: yarn start
     restart: always
     # volumes:
     #   - ./thor:/usr/app
