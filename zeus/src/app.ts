@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import "reflect-metadata";
 
 // @ts-ignore
 import Youch from 'youch';
