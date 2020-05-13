@@ -1,5 +1,5 @@
 {
-  "name": "zeus",
+  "name": "thor",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,27 +7,28 @@
     "start": "node dist/src/server.js",
     "dev": "ts-node-dev --respawn --poll --transpileOnly src/server.ts",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js",
-    "sync:database": "ts-node ./node_modules/typeorm/cli.js schema:sync",
+    "sync:database": "yarn typeorm schema:sync",
     "build": "tsc"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.0.3",
-    "typeorm": "^0.2.24",
-    "cors": "^2.8.5",
-    "dotenv": "^8.0.0",
-    "bcryptjs": "^2.4.3",
     "reflect-metadata": "^0.1.13",
+    "tslib": "^1.12.0",
+    "typeorm": "^0.2.24",
     "youch": "^2.0.10"
   },
   "devDependencies": {
-    "@types/node": "^12.12.31",
-    "@types/express": "^4.17.3",
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.3",
     "@types/jsonwebtoken": "^8.3.9",
+    "@types/node": "^12.12.31",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-config-prettier": "^6.0.0",
@@ -36,5 +37,8 @@
     "prettier": "^1.18.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "tslib": "1.11.2"
   }
 }

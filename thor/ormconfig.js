@@ -8,7 +8,9 @@ module.exports = {
   synchronize: true,
   dropSchema: false,
   // logging: true,
-  ssl: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
   entities: ['src/app/models/**/*.ts'],
   migrations: ['src/database/migrations/**/*.ts'],
   subscribers: ['src/database/subscriber/**/*.ts'],
