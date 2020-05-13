@@ -1,3 +1,6 @@
+const path = process.env.NODE_ENV === 'production' ? 'dist' : 'src';
+const ext = process.env.NODE_ENV === 'production' ? 'ts' : 'js';
+
 module.exports = {
   type: process.env.DB_CONNECTION,
   host: process.env.DB_HOST,
@@ -11,15 +14,9 @@ module.exports = {
   ssl: {
     rejectUnauthorized: false,
   },
-  entities: ['src/app/models/**/*.ts', 'dist/app/models/**/*.js'],
-  migrations: [
-    'src/database/migrations/**/*.ts',
-    'dist/database/migrations/**/*.js',
-  ],
-  subscribers: [
-    'src/database/subscriber/**/*.ts',
-    'dist/database/subscriber/**/*.js',
-  ],
+  entities: [`${path}/app/models/**/*.${ext}`],
+  migrations: [`${path}database/migrations/**/*.${ext}`],
+  subscribers: [`${path}/database/subscriber/**/*.${ext}`],
   cli: {
     entitiesDir: 'src/app/models',
     migrationsDir: 'src/database/migrations',
