@@ -7,7 +7,7 @@ import SessionController from "./app/controllers/SessionController";
 const routes = Router();
 
 routes.get('/', (req, res) => {
-  return res.status(200).json({ message: "Zeus!" })
+  return res.status(200).json({ message: "Zeus!!!" })
 });
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
